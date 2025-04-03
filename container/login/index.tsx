@@ -1,6 +1,14 @@
+import WebcamCapture from "@/components/my-ui/webcam";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { IconLockFilled, IconUserFilled } from "@tabler/icons-react";
+import {
+    Dialog,
+    DialogContent,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+  } from "@/components/ui/dialog"  
 
 export default function Login()
 {
@@ -15,9 +23,19 @@ export default function Login()
                 <IconLockFilled className="size-6 my-auto mr-2" />
                 <Input className="w-[200px]" type="password" placeholder="Password" />
             </div>
-            <div className="flex justify-center mt-4">
-                <Button className="w-[230px]">Login</Button>
-            </div>
+            <Dialog>
+                <div className="flex justify-center mt-4">
+                    <DialogTrigger>
+                        <Button className="w-[230px]">Login</Button>
+                    </DialogTrigger>
+                    <DialogContent>
+                        <DialogHeader>
+                            <DialogTitle className="text-center">Facial Recognition Scan</DialogTitle>
+                        </DialogHeader>
+                        <WebcamCapture />
+                    </DialogContent>
+                </div>
+            </Dialog>
         </div>
     )
 }
