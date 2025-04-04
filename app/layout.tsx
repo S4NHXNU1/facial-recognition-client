@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Prompt } from "next/font/google"
 import "./globals.css";
+import { Toaster } from "@/components/ui/toaster";
 
 const prompt = Prompt({weight: "300", subsets: ["latin", "thai"]})
 
@@ -20,6 +21,7 @@ export default function RootLayout({
         className={`${prompt.className} antialiased`}
       >
         {children}
+        <Toaster />
       </body>
     </html>
   );
