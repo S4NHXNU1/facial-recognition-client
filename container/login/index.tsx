@@ -1,5 +1,5 @@
 "use client";
-import WebcamCapture from "@/components/my-ui/webcam";
+import WebcamCapture from "@/components/my-ui/webcamScan";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { IconLockFilled, IconUserFilled } from "@tabler/icons-react";
@@ -24,8 +24,8 @@ import { useRouter } from "next/navigation";
 import { useState } from "react"
 
 const formSchema = z.object({
-    username: z.string().min(1, {message: "Cannot be blank"}),
-    password: z.string().min(1, {message: "Cannot be blank"}),
+    username: z.string().min(1, {message: "Required"}),
+    password: z.string().min(1, {message: "Required"}),
 });
 
 export default function Login()
